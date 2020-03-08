@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+  background-color: #f7f7f7;
+  color: #111111;
+  font-family: Raleway, sans-serif;
+  margin: 40px auto;
+  width: 800px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 96px;
+  color: #07f;
+}
+
+p {
+  font-size: 36px;
+  margin: 100px 100px;
+}
+
+.campaign {
+  font-size: 48px;
+  margin: 100px 0px;
+}
+
+.filled {
+  font-weight: bold;
+  color: #07f;
+}
+
+button {
+  font-size: 24px;
+  padding: 25px;
+  color: #07f;
+}
