@@ -103,7 +103,10 @@ const PLOTS = [
   "Big Trouble in Little China",
   "E.T.",
   "M*A*S*H",
-  "The Good, the Bad, and the Ugly"
+  "The Good, the Bad, and the Ugly",
+  "O Brother, Where Art Thou?",
+  "Johnny Dangerously",
+  "Maverick"
 ]
 
 let button, character, setting, plot
