@@ -1,39 +1,35 @@
-let characters, settings, plots
-let button, character, setting, plot
+document.addEventListener('DOMContentLoaded', async () => {
 
-document.addEventListener('DOMContentLoaded', () => {
+  let button = document.querySelector("#generate")
+  button.disabled = true
 
-  character = document.querySelector("#character")
-  setting = document.querySelector("#setting")
-  plot = document.querySelector("#plot")
-
-  button = document.querySelector("#generate")
-  button.addEventListener('click', () => campaignify())
-
-  Promise.all([
-
-    fetch('data/characters.json')
-      .then(response => response.json())
-      .then(data => characters = data),
-
-    fetch('data/settings.json')
-      .then(response => response.json())
-      .then(data => settings = data),
-
-    fetch('data/plots.json')
-      .then(response => response.json())
-      .then(data => plots = data)
-
+  let lists = await fetchLists([
+    'data/characters.json',
+    'data/settings.json',
+    'data/plots.json'
   ])
-    .then(csp => [characters, settings, plots] = csp)
-    .then(campaignify)
+
+  button.addEventListener('click', () => campaignify(...lists))
+  button.disabled = false
+
+  campaignify(...lists)
 
 })
 
-function campaignify() {
-  character.textContent = selectRandom(characters)
-  setting.textContent = selectRandom(settings)
-  plot.textContent = selectRandom(plots)
+async function fetchLists(names) {
+  return await Promise
+    .all(names
+      .map(path => fetch(path).then(response => response.json())))
+}
+
+function campaignify(characters, settings, plots) {
+  updateSelector("#character", characters)
+  updateSelector("#setting", settings)
+  updateSelector("#plot", plots)
+}
+
+function updateSelector(selector, list) {
+  document.querySelector(selector).textContent = selectRandom(list)
 }
 
 function selectRandom(items) {
