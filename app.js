@@ -1,37 +1,79 @@
-document.addEventListener('DOMContentLoaded', async () => {
+function Model() {
+
+  let characters, settings, plots
+
+  function load() {
+    let paths = ['data/characters.json', 'data/settings.json', 'data/plots.json']
+
+    return Promise
+      .all(paths.map(path => fetch(path).then(response => response.json())))
+      .then(lists => [characters, settings, plots] = lists)
+  }
+    
+  function campaignify() {
+    return {
+      character: selectRandom(characters),
+      setting: selectRandom(settings),
+      plot: selectRandom(plots)
+    }
+  }
+
+  function selectRandom(items) {
+    return items[Math.floor(Math.random() * items.length)]
+  }
+
+  return { load, campaignify }
+}
+
+function View() {
 
   let button = document.querySelector("#generate")
-  button.disabled = true
+  let characterElement = document.querySelector("#character")
+  let settingElement = document.querySelector("#setting")
+  let plotElement = document.querySelector("#plot")
 
-  let lists = await fetchLists([
-    'data/characters.json',
-    'data/settings.json',
-    'data/plots.json'
-  ])
+  function enableButton() { button.disabled = false }
+  function disableButton() { button.disabled = true }
 
-  button.addEventListener('click', () => campaignify(...lists))
-  button.disabled = false
+  function characterText(text) { characterElement.textContent = text }
+  function settingText(text) { settingElement.textContent = text }
+  function plotText(text) { plotElement.textContent = text }
 
-  campaignify(...lists)
+  function onButtonClick(handler) { button.addEventListener('click', handler) }
 
-})
-
-async function fetchLists(names) {
-  return await Promise
-    .all(names
-      .map(path => fetch(path).then(response => response.json())))
+  return {
+    enableButton, disableButton,
+    characterText, settingText, plotText,
+    onButtonClick }
 }
 
-function campaignify(characters, settings, plots) {
-  updateSelector("#character", characters)
-  updateSelector("#setting", settings)
-  updateSelector("#plot", plots)
+function Controller() {
+
+  let model, view
+
+  function onLoad() {
+    model = new Model()
+    view = new View()
+
+    view.disableButton()
+    view.onButtonClick(() => clickHandler())
+  
+    model.load().then(() => {
+      view.enableButton()
+      clickHandler()
+    })
+  }
+
+  function clickHandler() {
+    let { character, setting, plot } = model.campaignify()
+    view.characterText(character)
+    view.settingText(setting)
+    view.plotText(plot)
+  }
+  
+  return { onLoad }
 }
 
-function updateSelector(selector, list) {
-  document.querySelector(selector).textContent = selectRandom(list)
-}
+let controller = new Controller()
 
-function selectRandom(items) {
-  return items[Math.floor(Math.random() * items.length)]
-}
+document.addEventListener('DOMContentLoaded', () => controller.onLoad())
