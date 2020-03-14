@@ -29,6 +29,7 @@ function View() {
 
   let button = document.querySelector("#generate")
   let characterElement = document.querySelector("#character")
+  let settingArticleElement = document.querySelector("#settingArticle")
   let settingElement = document.querySelector("#setting")
   let plotElement = document.querySelector("#plot")
 
@@ -36,6 +37,7 @@ function View() {
   function disableButton() { button.disabled = true }
 
   function characterText(text) { characterElement.textContent = text }
+  function settingArticle(text) { settingArticleElement.textContent = text }
   function settingText(text) { settingElement.textContent = text }
   function plotText(text) { plotElement.textContent = text }
 
@@ -43,7 +45,7 @@ function View() {
 
   return {
     enableButton, disableButton,
-    characterText, settingText, plotText,
+    characterText, settingArticle, settingText, plotText,
     onButtonClick }
 }
 
@@ -67,8 +69,13 @@ function Controller() {
   function clickHandler() {
     let { character, setting, plot } = model.campaignify()
     view.characterText(character)
+    view.settingArticle(startsWithVowel(setting) ? "an" : "a")
     view.settingText(setting)
     view.plotText(plot)
+  }
+
+  function startsWithVowel(s) {
+    return s.match(/^[aeiouAEIOU]/)
   }
   
   return { onLoad }
