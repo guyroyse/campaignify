@@ -22,9 +22,7 @@ function Model() {
             article: startsWithVowel(setting) ? "an" : "a",
             name: setting
           },
-          plot: {
-            name: plot
-          }
+          plot
         }})
   }
 

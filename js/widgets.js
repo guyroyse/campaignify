@@ -21,4 +21,18 @@ function Span(selector) {
   return { text }
 }
 
-export { Button, Span }
+function Link(selector) {
+  let element = document.querySelector(selector)
+
+  function text(s) {
+    if (s !== undefined) element.textContent = s
+  }
+
+  function href(s) {
+    if (s !== undefined) element.href = s
+  }
+
+  return { text, href }
+}
+
+export { Button, Span, Link }
