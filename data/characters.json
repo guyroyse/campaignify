@@ -1,34 +1,98 @@
 [
-  "Bounty Hunters",
-  "Students",
-  "Teachers",
-  "Priests",
-  "Inquisitors",
-  "Politicians",
-  "Thieves",
-  "Hitmen",
-  "Pirates",
-  "Smugglers",
-  "Scientists",
-  "Explorers",
-  "Soldiers",
-  "Police",
-  "Treasure Hunters",
-  "Merchants",
-  "Wizards",
-  "Celebrities",
-  "Time Travelers",
-  "Commoners",
-  "Nobles",
-  "Family",
-  "Robots",
-  "Angels/Demons",
-  "Spys",
-  "Criminals",
-  "Children",
-  "Goblinoids",
-  "Barbarians",
-  "Aliens",
-  "Clones",
-  "Animals"
+  {
+    "name": "Aliens"
+  },
+  {
+    "name": "Angels/Demons"
+  },
+  {
+    "name": "Animals"
+  },
+  {
+    "name": "Barbarians"
+  },
+  {
+    "name": "Bounty Hunters"
+  },
+  {
+    "name": "Celebrities"
+  },
+  {
+    "name": "Children"
+  },
+  {
+    "name": "Clones"
+  },
+  {
+    "name": "Commoners"
+  },
+  {
+    "name": "Criminals"
+  },
+  {
+    "name": "Explorers"
+  },
+  {
+    "name": "Family"
+  },
+  {
+    "name": "Goblinoids"
+  },
+  {
+    "name": "Hitmen"
+  },
+  {
+    "name": "Inquisitors"
+  },
+  {
+    "name": "Merchants"
+  },
+  {
+    "name": "Nobles"
+  },
+  {
+    "name": "Pirates"
+  },
+  {
+    "name": "Police"
+  },
+  {
+    "name": "Politicians"
+  },
+  {
+    "name": "Priests"
+  },
+  {
+    "name": "Robots"
+  },
+  {
+    "name": "Scientists"
+  },
+  {
+    "name": "Smugglers"
+  },
+  {
+    "name": "Soldiers"
+  },
+  {
+    "name": "Spys"
+  },
+  {
+    "name": "Students"
+  },
+  {
+    "name": "Teachers"
+  },
+  {
+    "name": "Thieves"
+  },
+  {
+    "name": "Time Travelers"
+  },
+  {
+    "name": "Treasure Hunters"
+  },
+  {
+    "name": "Wizards"
+  }
 ]

@@ -16,11 +16,11 @@ function Model() {
         let [character, setting, plot] = selections
         return {
           character: {
-            name: character
+            name: character.name
           },
           setting: {
-            article: startsWithVowel(setting) ? "an" : "a",
-            name: setting
+            article: startsWithVowel(setting.name) ? "an" : "a",
+            name: setting.name
           },
           plot: { 
             name: plot.name,

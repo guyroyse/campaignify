@@ -1,38 +1,110 @@
 [
-  "Modern",
-  "Low Fantasy (Conan)",
-  "High Fantasy (LotR)",
-  "Comedic Fantasy (Discworld)",
-  "Grimdark",
-  "Underdark",
-  "Dark Sun",
-  "Space Opera (Flash Gordon)",
-  "Science Fantasy (Star Wars)",
-  "Science Fiction (Star Trek)",
-  "Eldritch Horror",
-  "Post Apocalypse",
-  "Cyberpunk",
-  "Steampunk",
-  "Dieselpunk",
-  "Etherpunk",
-  "Flood World",
-  "Pirates",
-  "Wild West",
-  "Roman Empire",
-  "Medieval Europe",
-  "Egyptian",
-  "Wuxia",
-  "Candyland",
-  "Stone Age",
-  "World War I",
-  "World War II",
-  "World War III",
-  "Spelljammer",
-  "Mecha",
-  "Outer Planes",
-  "Elemental Planes",
-  "Espionage",
-  "Shadowfell",
-  "Feywild",
-  "Outer Space"
+  {
+    "name": "Candyland"
+  },
+  {
+    "name": "Comedic Fantasy (Discworld)"
+  },
+  {
+    "name": "Cyberpunk"
+  },
+  {
+    "name": "Dark Sun"
+  },
+  {
+    "name": "Dieselpunk"
+  },
+  {
+    "name": "Egyptian"
+  },
+  {
+    "name": "Eldritch Horror"
+  },
+  {
+    "name": "Elemental Planes"
+  },
+  {
+    "name": "Espionage"
+  },
+  {
+    "name": "Etherpunk"
+  },
+  {
+    "name": "Feywild"
+  },
+  {
+    "name": "Flood World"
+  },
+  {
+    "name": "Grimdark"
+  },
+  {
+    "name": "High Fantasy (LotR)"
+  },
+  {
+    "name": "Low Fantasy (Conan)"
+  },
+  {
+    "name": "Mecha"
+  },
+  {
+    "name": "Medieval Europe"
+  },
+  {
+    "name": "Modern"
+  },
+  {
+    "name": "Outer Planes"
+  },
+  {
+    "name": "Outer Space"
+  },
+  {
+    "name": "Pirates"
+  },
+  {
+    "name": "Post Apocalypse"
+  },
+  {
+    "name": "Roman Empire"
+  },
+  {
+    "name": "Science Fantasy (Star Wars)"
+  },
+  {
+    "name": "Science Fiction (Star Trek)"
+  },
+  {
+    "name": "Shadowfell"
+  },
+  {
+    "name": "Space Opera (Flash Gordon)"
+  },
+  {
+    "name": "Spelljammer"
+  },
+  {
+    "name": "Steampunk"
+  },
+  {
+    "name": "Stone Age"
+  },
+  {
+    "name": "Underdark"
+  },
+  {
+    "name": "Wild West"
+  },
+  {
+    "name": "World War I"
+  },
+  {
+    "name": "World War II"
+  },
+  {
+    "name": "World War III"
+  },
+  {
+    "name": "Wuxia"
+  }
 ]
