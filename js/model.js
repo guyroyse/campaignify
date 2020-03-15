@@ -12,27 +12,29 @@ function Model() {
   function campaign() {
     return Promise
       .all([ selectCharacter(), selectSetting(), selectPlot() ])
-      .then(selections => {
-        let [character, setting, plot] = selections
-        return {
-          character: {
-            name: character.name
-          },
-          setting: {
-            article: startsWithVowel(setting.name) ? "an" : "a",
-            name: setting.name
-          },
-          plot: { 
-            name: plot.name,
-            link: plot.link,
-            punctuation: endsWithPunctuation(plot.name) ? "" : "."
-          }
-        }})
+      .then(selections => buildCampaign(...selections))
   }
 
-  let selectCharacter = selector('characters', () => adapter.fetchCharacters())
-  let selectSetting = selector('settings', () => adapter.fetchSettings())
-  let selectPlot = selector('plots', () => adapter.fetchPlots())
+  let selectCharacter = selector('characters', adapter.fetchCharacters)
+  let selectSetting = selector('settings', adapter.fetchSettings)
+  let selectPlot = selector('plots', adapter.fetchPlots)
+
+  function buildCampaign(character, setting, plot) {
+    return {
+      character: {
+        name: character.name
+      },
+      setting: {
+        article: startsWithVowel(setting.name) ? "an" : "a",
+        name: setting.name
+      },
+      plot: { 
+        name: plot.name,
+        link: plot.link,
+        punctuation: endsWithPunctuation(plot.name) ? "" : "."
+      }
+    }
+  }
 
   function startsWithVowel(s) {
     return s.match(/^[aeiouAEIOU]/)

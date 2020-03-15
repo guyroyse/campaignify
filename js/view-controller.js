@@ -11,11 +11,8 @@ function ViewController() {
   let plot = new Link('#plot')
   let plotPunctuation = new Span('#plotPunctuation')
 
-  button.onClick(() => onButtonClicked())
-
-  button.disable()
-  buildCampaign()
-    .then(() => button.enable())
+  button.onClick(onButtonClicked)
+  onButtonClicked()
 
   function onButtonClicked() {
     button.disable()
@@ -36,6 +33,7 @@ function ViewController() {
         plot.href(campaign.plot.link ? campaign.plot.link : undefined)
         plot.text(campaign.plot.name)
         plotPunctuation.text(campaign.plot.punctuation)
+
       })
   }
 }
