@@ -22,7 +22,11 @@ function Model() {
             article: startsWithVowel(setting) ? "an" : "a",
             name: setting
           },
-          plot
+          plot: { 
+            name: plot.name,
+            link: plot.link,
+            punctuation: endsWithPunctuation(plot.name) ? "" : "."
+          }
         }})
   }
 
@@ -32,6 +36,10 @@ function Model() {
 
   function startsWithVowel(s) {
     return s.match(/^[aeiouAEIOU]/)
+  }
+
+  function endsWithPunctuation(s) {
+    return s.match(/[\.\!\?]$/)
   }
 
   function selector(listName, fetcher) {
