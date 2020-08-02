@@ -75,7 +75,7 @@
     "name": "Soldiers"
   },
   {
-    "name": "Spys"
+    "name": "Spies"
   },
   {
     "name": "Students"
@@ -94,5 +94,32 @@
   },
   {
     "name": "Wizards"
+  },
+  {
+    "name": "Farmers"
+  },
+  {
+    "name": "Entertainers"
+  },
+  {
+    "name": "Salesmen"
+  },
+  {
+    "name": "Savage Tribesmen"
+  },
+  {
+    "name": "Retail Clerks"
+  },
+  {
+    "name": "Fast Food Workers"
+  },
+  {
+    "name": "Stewardesses"
+  },
+  {
+    "name": "Escaped Prisoners"
+  },
+  {
+    "name": "Musicians"
   }
 ]
